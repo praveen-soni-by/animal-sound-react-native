@@ -5,6 +5,20 @@ import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import data from "../data/data";
 import Card from "./ui/Card";
 
+const colors = [
+  "#d81b60",
+  "#2196f3",
+  "#ff6f00",
+  "#ffa726",
+  "#009688",
+  "#388e3c",
+  "#673ab7",
+  "#d32f2f",
+  "#bdbdbd",
+  "#fdd835",
+  "#0097a7",
+];
+
 export default Animals = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [sound, setSound] = React.useState();
@@ -24,7 +38,10 @@ export default Animals = () => {
   }, [sound]);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#ffffff";
+    const backgroundColor =
+      item.id === selectedId
+        ? colors[Math.floor(Math.random() * 10) + 1]
+        : "#ffffff";
 
     return (
       <Card

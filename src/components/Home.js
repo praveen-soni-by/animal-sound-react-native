@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import LottieView from "lottie-react-native";
 
+
 export default Home = (props) => {
   return (
     <View style={{ flex: 1 }}>
@@ -14,7 +15,7 @@ export default Home = (props) => {
         source={require("../../assets/6732-animal.json")}
       />
       <View style={styles.titleContainer}>
-        <Text style={[styles.text, { fontSize: 50 }]}>Animal Sounds</Text>
+        <Text style={[styles.text, { fontSize: 50 }]}>Animals Sound</Text>
       </View>
       <TouchableOpacity style={styles.container} onPress={props.play}>
         <View style={styles.buttonContainer}>
