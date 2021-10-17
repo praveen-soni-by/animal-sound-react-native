@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import LottieView from "lottie-react-native";
@@ -14,7 +14,7 @@ export default Home = (props) => {
         source={require("../../assets/6732-animal.json")}
       />
       <View style={styles.titleContainer}>
-        <Text style={[styles.text, { fontSize: 30 }]}>Animal Sounds</Text>
+        <Text style={[styles.text, { fontSize: 50 }]}>Animal Sounds</Text>
       </View>
       <TouchableOpacity style={styles.container} onPress={props.play}>
         <View style={styles.buttonContainer}>
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
 
   text: {
     color: "white",
-    fontSize: 24,
+    fontSize: 30,
+    fontFamily:"Lobster"
   },
 });

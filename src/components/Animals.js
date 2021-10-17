@@ -1,15 +1,9 @@
 import { Audio } from "expo-av";
 import LottieView from "lottie-react-native";
-import React, { useState } from "react";
-import {
-  ImageBackground,
-  FlatList,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-} from "react-native";
-import Card from "./ui/Card";
+import React, { useRef, useState, useEffect } from "react";
+import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import data from "../data/data";
+import Card from "./ui/Card";
 
 export default Animals = () => {
   const [selectedId, setSelectedId] = useState(null);
@@ -54,13 +48,13 @@ export default Animals = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-        <FlatList
-          numColumns={3}
-          columnWrapperStyle={styles.row}
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
+      <FlatList
+        numColumns={3}
+        columnWrapperStyle={styles.row}
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
     </SafeAreaView>
   );
 };
